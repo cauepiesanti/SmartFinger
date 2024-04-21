@@ -1,0 +1,77 @@
+<SignupScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+    
+        Label:
+            text: "Sign up"
+        
+        TextInput:
+            id: fullName_input
+            hint_text: "Full Name"
+            multiline: False
+
+        TextInput:
+            id: gender_input
+            hint_text: "Gender"
+            multiline: False
+
+        TextInput:
+            id: phoneNumber_input
+            hint_text: "Phone Number"
+            multiline: False
+        
+        TextInput:
+            id: birthDate_input
+            hint_text: "Birthdate"
+            multiline: False
+
+        TextInput:
+            id: cpf_input
+            hint_text: "CPF"
+            multiline: False
+        
+        TextInput:
+            id: rg_input
+            hint_text: "RG"
+            multiline: False
+
+        TextInput:
+            id: email_input
+            hint_text: "Email"
+            multiline: False
+        
+        TextInput:
+            id: post_input
+            hint_text: "Post"
+            multiline: False
+
+        TextInput:
+            id: zipCode_input
+            hint_text: "ZIP Code"
+            multiline: False
+
+        TextInput:
+            id: street_input
+            hint_text: "Street Adress"
+            multiline: False
+        
+        TextInput:
+            id: homeNumber_input
+            hint_text: "Home Number"
+            multiline: False
+
+        TextInput:
+            id: unit_input
+            hint_text: "Apartment/Suite/Unit"
+            multiline: False
+        
+        Button:
+            text: "Back"
+            on_press: root.back(root)
+        
+        Button:
+            text: "Skip"
+            on_press: root.createUser(root)
+            
+        
+

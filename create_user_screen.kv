@@ -1,0 +1,28 @@
+<CreateUserScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        
+        Label:
+            text: "Create User" 
+
+        TextInput:
+            id: userName_input
+            hint_text: "Username"
+            multiline: False
+        
+        TextInput:
+            id: password_input
+            hint_text: "Password"
+            multiline: False
+
+        Button:
+            text: "Back"
+            on_press: root.back(root)
+        
+        Button:
+            text: "Register"
+            on_press: root.returnLogin(root)
+    
+        Label:
+            id: message
+        
