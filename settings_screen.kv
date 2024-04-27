@@ -1,0 +1,23 @@
+<SettingsScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        Button:
+            size_hint: 1,.25
+            text: 'Select Language'
+            #on_press: root.change_screen('language')
+        
+        Button:
+            size_hint: 1,.25
+            text: 'Edit Profile'
+            on_press: root.change_screen('profile')
+
+        Button:
+            size_hint: 1,.25
+            text: 'Toggle Dark mode'
+            on_press: root.toggle_dark_mode
+
+        Button:
+            size_hint: 1,.25
+            text: 'Back'
+            on_press: root.change_screen('mainMenu')

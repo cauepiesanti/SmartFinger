@@ -1,0 +1,95 @@
+<MainMenuScreen>:
+    FloatLayout:
+        id: main_layout
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 1, 0.8
+            pos_hint: {'top' : 0.9}
+
+            Button:
+                text: 'Produto 1\nEstoque: 10\nPreço: $10'
+                size_hint: 1, 0.33
+            
+            Button:
+                text: 'Produto 2\nEstoque: 10\nPreço: $10'
+                size_hint: 1, 0.33
+            
+            Button:
+                text: 'Produto 3\nEstoque: 10\nPreço: $10'
+                size_hint: 1, 0.33
+        
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, 0.1
+            pos_hint: {'bottom': 0}
+
+            Button:
+                background_normal: 'images/perfil.png'
+                background_color: 0,0,0,0
+                text: 'Profile'
+                size_hint: .1, 1
+                pos_hint: {'left':1}
+                on_press: root.change_screen('profile')
+
+            Button:
+                background_normal: 'images/depositar_fundos.png'
+                background_color: 0,0,0,0
+                text: 'Deposit'
+                size_hint: .1, 1
+                pos_hint: {'left':0.8}
+                on_press: root.change_screen('deposit')
+                
+            Button:
+                background_normal: 'images/carrinho.png'
+                background_color: 0,0,0,0
+                text: 'Cart'
+                size_hint: .1, 1
+                pos_hint: {'left':0.6}
+                #on_press: root.change_screen('shopping_cart')
+            
+            Button:
+                background_normal: 'images/horarios_de_pico.png'
+                background_color: 0,0,0,0
+                text: 'Peak'
+                size_hint: .1, 1
+                pos_hint: {'left':0.4}
+                #on_press: root.change_screen('peak_times')
+
+            Button:
+                background_normal: 'images/historico_transacoes.png'
+                background_color: 0,0,0,0
+                text: 'Orders'
+                size_hint: .1, 1
+                pos_hint: {'left':0.2}
+                #on_press: root.change_screen('historic')
+        
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, 0.1
+            pos_hint: {'top': 1}
+
+            Button:
+                background_normal: 'images/ajuda.png'
+                background_color: 0,0,0,0
+                text: 'Help'
+                size_hint: .1, 1
+                pos_hint: {'left':1}
+                on_press: root.change_screen('help')
+
+            Button:
+                background_normal: 'images/saldo.png'
+                background_color: 0,0,0,0
+                text: 'Balance: $100'
+                size_hint: .1, 1
+                pos_hint: {'center_x':0.5}
+                #on_press: root.change_screen('historic')
+            
+            Button:
+                background_normal: 'images/config.png'
+                background_color: 0,0,0,0
+                text: 'Settings'
+                size_hint: .1, 1
+                pos_hint: {'right':1}
+                on_press: root.change_screen('settings')      
+      
