@@ -2,7 +2,7 @@ TOUTORIAL PARA GERAR O .APK COM MÁQUINA VIRTUAL DO GOOGLE:
 
 1- [Link para os comandos da máquina virtual](https://colab.research.google.com/drive/16wji2BWd5HHlp7eNqBBcZONCxxCzV-jy?usp=sharing)
 
-2- Upar o main.py, criar uma pasta chamada "images" e colocar as imagens dentro (não é possível upar a pasta inteira) 
+2- Upar o TODOS os arquivos .py e .kv do projeto, criar uma pasta chamada "images" e colocar as imagens dentro (não é possível upar a pasta inteira) 
 
 3- Executar os comandos linha a linha
 
