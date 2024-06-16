@@ -3,28 +3,28 @@
         orientation: 'vertical'
 
         Label:
-            text: "Login Screen"
+            text: "Login"
         
         TextInput:
             id: username_input
-            hint_text: 'Username'
+            hint_text: 'Usuário'
             multiline: False
+            on_text: root.remove_spaces(self)
         
         TextInput:
             id: password_input
-            hint_text: 'Password'
+            hint_text: 'Senha'
             multiline: False
             password: True
+            on_text: root.remove_spaces(self)
         
         Button:
             text: 'Login'
             on_press: root.login(root)
         
         Button:
-            text: 'Sign Up'
-            on_press: root.signin(root)
+            text: 'Cadastrar-se'
+            on_press: root.signup(root)
         
         Label:
             id: message_label
-
-

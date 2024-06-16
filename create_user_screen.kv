@@ -3,26 +3,27 @@
         orientation: 'vertical'
         
         Label:
-            text: 'Create User' 
+            text: 'Criar Usuário' 
 
         TextInput:
             id: userName_input
-            hint_text: 'Username'
+            hint_text: 'Usuário'
             multiline: False
+            on_text: root.remove_spaces(self)
         
         TextInput:
             id: password_input
-            hint_text: 'Password'
+            hint_text: 'Senha'
             multiline: False
+            on_text: root.remove_spaces(self)
 
         Button:
-            text: 'Back'
+            text: 'Voltar'
             on_press: root.back(root)
         
         Button:
-            text: 'Register'
+            text: 'Confirmar cadastro'
             on_press: root.returnLogin(root)
     
         Label:
             id: message
-        

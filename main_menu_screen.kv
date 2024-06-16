@@ -5,20 +5,290 @@
         BoxLayout:
             orientation: 'vertical'
             size_hint: 1, 0.8
-            pos_hint: {'top' : 0.9}
+            pos_hint: {'top': 0.9}
 
-            Button:
-                text: 'Produto 1\nEstoque: 10\nPreço: $10'
-                size_hint: 1, 0.33
-            
-            Button:
-                text: 'Produto 2\nEstoque: 10\nPreço: $10'
-                size_hint: 1, 0.33
-            
-            Button:
-                text: 'Produto 3\nEstoque: 10\nPreço: $10'
-                size_hint: 1, 0.33
-        
+            # TABELA
+            FloatLayout:
+                size_hint: 1, 0.25
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint: 1, 1
+                    height: self.minimum_height
+                    pos_hint: {'x': 0, 'y': 0}
+
+                    BoxLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 1)
+                            Line:
+                                width: 1
+                                rectangle: self.x, self.y, self.width, self.height
+                        TextInput:
+                            readonly: True
+                            multiline: False
+                            text: 'Produto'
+                            halign: 'center'
+                            valign: 'middle'
+                            font_size: 30
+                            height: self.parent.height  # Define a altura igual à altura do pai
+                            padding_y: [self.height/2 - self.line_height/2, 0]  # Centraliza verticalmente
+                            pos_hint: {'center_x':0 , 'center_y':0.5}
+                            background_normal: ''
+                            background_color: (0.35, 0.35, 0.35, 1)  # Cinza claro
+
+                    BoxLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 1)
+                            Line:
+                                width: 1
+                                rectangle: self.x, self.y, self.width, self.height
+                        TextInput:
+                            readonly: True
+                            multiline: False
+                            text: 'Preço unitário'
+                            halign: 'center'
+                            valign: 'middle'
+                            font_size: 30
+                            height: self.parent.height  # Define a altura igual à altura do pai
+                            padding_y: [self.height/2 - self.line_height/2, 0]  # Centraliza verticalmente
+                            pos_hint: {'center_x':0 , 'center_y':0.5}
+                            background_normal: ''
+                            background_color: (0.35, 0.35, 0.35, 1)  # Cinza claro
+
+                    BoxLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 1)
+                            Line:
+                                width: 1
+                                rectangle: self.x, self.y, self.width, self.height
+                        TextInput:
+                            readonly: True
+                            multiline: False
+                            text: 'Estoque'
+                            halign: 'center'
+                            valign: 'middle'
+                            font_size: 30
+                            height: self.parent.height  # Define a altura igual à altura do pai
+                            padding_y: [self.height/2 - self.line_height/2, 0]  # Centraliza verticalmente
+                            pos_hint: {'center_x':0 , 'center_y':0.5}
+                            background_normal: ''
+                            background_color: (0.35, 0.35, 0.35, 1)  # Cinza claro
+
+            # Produto 1
+            FloatLayout:
+                size_hint: 1, 0.25
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint: 1, 1
+                    height: self.minimum_height
+                    pos_hint: {'x': 0, 'y': 0}
+
+                    BoxLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 1)
+                            Line:
+                                width: 1
+                                rectangle: self.x, self.y, self.width, self.height
+                        TextInput:
+                            id: nome_produto_1
+                            readonly: True
+                            multiline: False
+                            text: ''
+                            halign: 'center'
+                            valign: 'middle'
+                            font_size: 30
+                            height: self.parent.height  # Define a altura igual à altura do pai
+                            padding_y: [self.height/2 - self.line_height/2, 0]  # Centraliza verticalmente
+                            background_normal: ''
+                            background_color: (0.60, 0.60, 0.60, 1)  # Cinza claro
+
+                    BoxLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 1)
+                            Line:
+                                width: 1
+                                rectangle: self.x, self.y, self.width, self.height
+                        TextInput:
+                            id: preco_produto_1
+                            readonly: True
+                            multiline: False
+                            text: ''
+                            halign: 'center'
+                            valign: 'middle'
+                            font_size: 30
+                            height: self.parent.height  # Define a altura igual à altura do pai
+                            padding_y: [self.height/2 - self.line_height/2, 0]  # Centraliza verticalmente
+                            background_normal: ''
+                            background_color: (0.60, 0.60, 0.60, 1)  # Cinza claro
+
+                        
+                    BoxLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 1)
+                            Line:
+                                width: 1
+                                rectangle: self.x, self.y, self.width, self.height
+                        TextInput:
+                            id: estoque_produto_1
+                            readonly: True
+                            multiline: False
+                            text: '0'
+                            halign: 'center'
+                            valign: 'middle'
+                            font_size: 30
+                            height: self.parent.height  # Define a altura igual à altura do pai
+                            padding_y: [self.height/2 - self.line_height/2, 0]  # Centraliza verticalmente
+                            background_normal: ''
+                            background_color: (0.60, 0.60, 0.60, 1)  # Cinza claro
+
+
+            # Produto 2
+            FloatLayout:
+                size_hint: 1, 0.25
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint: 1, 1
+                    height: self.minimum_height
+                    pos_hint: {'x': 0, 'y': 0}
+
+                    BoxLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 1)
+                            Line:
+                                width: 1
+                                rectangle: self.x, self.y, self.width, self.height
+                        TextInput:
+                            id: nome_produto_2
+                            readonly: True
+                            multiline: False
+                            text: ''
+                            halign: 'center'
+                            valign: 'middle'
+                            font_size: 30
+                            height: self.parent.height  # Define a altura igual à altura do pai
+                            padding_y: [self.height/2 - self.line_height/2, 0]  # Centraliza verticalmente
+                            background_normal: ''
+                            background_color: (0.60, 0.60, 0.60, 1)  # Cinza claro
+
+                    BoxLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 1)
+                            Line:
+                                width: 1
+                                rectangle: self.x, self.y, self.width, self.height
+                        TextInput:
+                            id: preco_produto_2
+                            readonly: True
+                            multiline: False
+                            text: ''
+                            halign: 'center'
+                            valign: 'middle'
+                            font_size: 30
+                            height: self.parent.height  # Define a altura igual à altura do pai
+                            padding_y: [self.height/2 - self.line_height/2, 0]  # Centraliza verticalmente
+                            background_normal: ''
+                            background_color: (0.60, 0.60, 0.60, 1)  # Cinza claro
+                                          
+                    BoxLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 1)
+                            Line:
+                                width: 1
+                                rectangle: self.x, self.y, self.width, self.height
+                        TextInput:
+                            id: estoque_produto_2
+                            readonly: True
+                            multiline: False
+                            text: '0'
+                            halign: 'center'
+                            valign: 'middle'
+                            font_size: 30
+                            height: self.parent.height  # Define a altura igual à altura do pai
+                            padding_y: [self.height/2 - self.line_height/2, 0]  # Centraliza verticalmente
+                            background_normal: ''
+                            background_color: (0.60, 0.60, 0.60, 1)  # Cinza claro
+
+            # Produto 3
+            FloatLayout:
+                size_hint: 1, 0.25
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint: 1, 1
+                    height: self.minimum_height
+                    pos_hint: {'x': 0, 'y': 0}
+
+                    BoxLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 1)
+                            Line:
+                                width: 1
+                                rectangle: self.x, self.y, self.width, self.height
+                        TextInput:
+                            id: nome_produto_3
+                            readonly: True
+                            multiline: False
+                            text: ''
+                            halign: 'center'
+                            valign: 'middle'
+                            font_size: 30
+                            height: self.parent.height  # Define a altura igual à altura do pai
+                            padding_y: [self.height/2 - self.line_height/2, 0]  # Centraliza verticalmente
+                            background_normal: ''
+                            background_color: (0.60, 0.60, 0.60, 1)  # Cinza claro
+
+                    BoxLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 1)
+                            Line:
+                                width: 1
+                                rectangle: self.x, self.y, self.width, self.height
+                        TextInput:
+                            id: preco_produto_3
+                            readonly: True
+                            multiline: False
+                            text: ''
+                            halign: 'center'
+                            valign: 'middle'
+                            font_size: 30
+                            height: self.parent.height  # Define a altura igual à altura do pai
+                            padding_y: [self.height/2 - self.line_height/2, 0]  # Centraliza verticalmente
+                            background_normal: ''
+                            background_color: (0.60, 0.60, 0.60, 1)  # Cinza claro
+                                        
+                    BoxLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 1)
+                            Line:
+                                width: 1
+                                rectangle: self.x, self.y, self.width, self.height
+                        TextInput:
+                            id: estoque_produto_3
+                            readonly: True
+                            multiline: False
+                            text: '0'
+                            halign: 'center'
+                            valign: 'middle'
+                            font_size: 30
+                            height: self.parent.height  # Define a altura igual à altura do pai
+                            padding_y: [self.height/2 - self.line_height/2, 0]  # Centraliza verticalmente
+                            background_normal: ''
+                            background_color: (0.60, 0.60, 0.60, 1)  # Cinza claro
+
         BoxLayout:
             orientation: 'horizontal'
             size_hint: 1, 0.1
@@ -26,44 +296,34 @@
 
             Button:
                 background_normal: 'images/perfil.png'
-                background_color: 0,0,0,0
-                text: 'Profile'
+                background_color: 0, 0, 0, 0
+                text: 'Perfil'
                 size_hint: .1, 1
-                pos_hint: {'left':1}
+                pos_hint: {'left': 1}
                 on_press: root.change_screen('profile')
 
             Button:
                 background_normal: 'images/depositar_fundos.png'
-                background_color: 0,0,0,0
-                text: 'Deposit'
+                background_color: 0, 0, 0, 0
+                text: 'Depositar'
                 size_hint: .1, 1
-                pos_hint: {'left':0.8}
+                pos_hint: {'left': 0.8}
                 on_press: root.change_screen('deposit')
-                
-            Button:
-                background_normal: 'images/carrinho.png'
-                background_color: 0,0,0,0
-                text: 'Cart'
-                size_hint: .1, 1
-                pos_hint: {'left':0.6}
-                #on_press: root.change_screen('shopping_cart')
-            
+
             Button:
                 background_normal: 'images/horarios_de_pico.png'
-                background_color: 0,0,0,0
-                text: 'Peak'
+                background_color: 0, 0, 0, 0
+                text: 'Pico'
                 size_hint: .1, 1
-                pos_hint: {'left':0.4}
-                #on_press: root.change_screen('peak_times')
+                pos_hint: {'left': 0.4}
 
             Button:
                 background_normal: 'images/historico_transacoes.png'
-                background_color: 0,0,0,0
-                text: 'Orders'
+                background_color: 0, 0, 0, 0
+                text: 'Ordens'
                 size_hint: .1, 1
-                pos_hint: {'left':0.2}
-                #on_press: root.change_screen('historic')
-        
+                pos_hint: {'left': 0.2}
+
         BoxLayout:
             orientation: 'horizontal'
             size_hint: 1, 0.1
@@ -71,25 +331,23 @@
 
             Button:
                 background_normal: 'images/ajuda.png'
-                background_color: 0,0,0,0
-                text: 'Help'
+                background_color: 0, 0, 0, 0
+                text: 'Ajuda'
                 size_hint: .1, 1
-                pos_hint: {'left':1}
                 on_press: root.change_screen('help')
 
             Button:
+                id: balance_button
                 background_normal: 'images/saldo.png'
-                background_color: 0,0,0,0
-                text: 'Balance: $100'
+                background_color: 0, 0, 0, 0
+                text: 'Saldo: $0.00' # f'Saldo: ${root.current_user_balance:.2f}'
                 size_hint: .1, 1
-                pos_hint: {'center_x':0.5}
-                #on_press: root.change_screen('historic')
-            
+                pos_hint: {'center_x': 0.5}
+                on_press: root.change_screen('deposit')
+
             Button:
                 background_normal: 'images/config.png'
-                background_color: 0,0,0,0
-                text: 'Settings'
+                background_color: 0, 0, 0, 0
+                text: 'Configurações'
                 size_hint: .1, 1
-                pos_hint: {'right':1}
-                on_press: root.change_screen('settings')      
-      
+                on_press: root.change_screen('settings')

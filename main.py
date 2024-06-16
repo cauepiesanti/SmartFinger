@@ -12,11 +12,12 @@ from helpScreen import HelpScreen
 from depositScreen import DepositScreen
 from profileScreen import ProfileScreen
 
+
 class MyApp(App):
     def build(self):
         sm =ScreenManager()
         sm.add_widget(LoginScreen(name='login'))
-        sm.add_widget(SignupScreen(name='signup'))
+        #sm.add_widget(SignupScreen(name='signup'))
         sm.add_widget(CreateUserScreen(name='createUser'))
         sm.add_widget(MainMenuScreen(name='mainMenu'))
         sm.add_widget(SettingsScreen(name='settings'))
@@ -26,9 +27,7 @@ class MyApp(App):
         #testando
         #sm.add_widget(LoginScreen(name='shopping_cart'))
         #sm.add_widget(LoginScreen(name='historic'))
-        #sm.add_widget(LoginScreen(name='help'))
         #sm.add_widget(LoginScreen(name='profile'))
-        #sm.add_widget(LoginScreen(name='deposit'))
         #sm.add_widget(LoginScreen(name='peak_times'))
         #sm.add_widget(LoginScreen(name='language'))
         

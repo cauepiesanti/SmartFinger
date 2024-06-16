@@ -7,7 +7,7 @@ Builder.load_file('profile_screen.kv')
 class ProfileScreen(Screen):
     
     def save_return_mainMenu(self,instance):
-        self.ids.message_label.text='Changes confirmed!'
+        self.ids.message_label.text='Alterações salvas!'
         Clock.schedule_once(self.return_mainMenu,1)
         
     def return_mainMenu(self,dt):

@@ -2,32 +2,36 @@
     FloatLayout:
         orientation: 'vertical'
         Button:
-            text: 'Back'
-            size_hint: .2,.1
-            pos_hint: {'left':1,'top':1}
+            text: 'Voltar'
+            size_hint: .2, .1
+            pos_hint: {'left': 1, 'top': 1}
             on_press: root.manager.current = 'mainMenu'
         Label:
             id: balance
-            text: 'Balance: $100'
-            size_hint: .2,.1
-            pos_hint:{'center_x':0.5,'top':1}    
+            text: 'Saldo: $0.00'
+            size_hint: .2, .1
+            pos_hint: {'center_x': 0.5, 'top': 1}    
         TextInput:
-            hint_text : 'Amount to be deposited'
-            multiline : False
-            size_hint: .5,.1
-            pos_hint: {'center_x':0.5,'top':0.8}
+            id: deposit_input
+            hint_text: 'Valor a depositar'
+            multiline: False
+            size_hint: .5, .1
+            pos_hint: {'center_x': 0.5, 'top': 0.8}
+            input_filter: 'float'
+            input_type: 'number'
+            on_text: root.update_future_balance(self, self.text)
         Label:
             id: future_balance
-            text:'Future balance: $250'
-            size_hint: 1,.2
-            pos_hint: {'center_x':0.5,'top':0.7}
+            text: 'Saldo futuro: $0.00'
+            size_hint: 1, .2
+            pos_hint: {'center_x': 0.5, 'top': 0.7}
         Button:
-            text: 'Confirm'
-            size_hint: .3,.1
-            pos_hint: {'center_x':0.5,'top':0.5}
+            text: 'Confirmar'
+            size_hint: .3, .1
+            pos_hint: {'center_x': 0.5, 'top': 0.5}
             on_press: root.print_message_change_screen(root)
         Label:
             id: message_label
             text: ' '
-            size_hint: 1,.1
-            pos_hint: {'center_x':0.5,'bottom':1}
+            size_hint: 1, .1
+            pos_hint: {'center_x': 0.5, 'bottom': 1}
