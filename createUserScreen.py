@@ -17,6 +17,7 @@ class CreateUserScreen(Screen):
         
         if not username or not password:
             self.ids.message.text = 'Usuário e senha não podem ser vazios!'
+            Clock.schedule_once(lambda dt: self.set_message(''),2)
             return
         
         data = {
@@ -30,10 +31,15 @@ class CreateUserScreen(Screen):
         if response.status_code == 201:
             self.ids.message.text = 'Cadastro bem-sucedido!'
             Clock.schedule_once(self.load_login_screen, 1)
+            self.ids.userName_input.text = ''
+            self.ids.password_input.text = ''
+            Clock.schedule_once(lambda dt: self.set_message(''),2)
         elif response.status_code == 409:
-            self.ids.message.text = 'Nome de usuário já existe. Escolha outro nome.'
+            self.set_message('Nome de usuário já existe. Escolha outro nome.')
+            Clock.schedule_once(lambda dt: self.set_message(''),2)
         else:
             self.ids.message.text = 'Erro no cadastro!'
+            Clock.schedule_once(lambda dt: self.set_message(''),2)
 
     
     def load_login_screen(self, dt):
@@ -42,6 +48,11 @@ class CreateUserScreen(Screen):
 
     def back(self, instance):
         self.manager.current='login'#'signup'
+        self.ids.userName_input.text = ''
+        self.ids.password_input.text = ''
 
     def remove_spaces(self, text_input):
         text_input.text = text_input.text.replace(' ', '').replace('\t', '')
+
+    def set_message(self,message):
+        self.ids.message.text = message

@@ -14,6 +14,9 @@ class LoginScreen(Screen):
 
     def signup(self, instance):
         self.manager.current = 'createUser'
+        self.set_label('')
+        self.ids.username_input.text = ''
+        self.ids.password_input.text = ''
 
     def login(self, instance):
         username = self.ids.username_input.text
@@ -36,10 +39,11 @@ class LoginScreen(Screen):
                 balance_data = balance_response.json()
                 user_data.update_current_user_balance(balance_data['balance'])
 
-            self.ids.message_label.text = 'Login bem-sucedido!'
+            self.set_label('Login bem-sucedido!')
             Clock.schedule_once(self.load_main_menu, 1)
         else:
-            self.ids.message_label.text = 'Login falhou! Usuário ou senha inválidos.'
+            self.set_label('Login falhou! Usuário ou senha inválidos.')
+            Clock.schedule_once(lambda dt: self.set_label(''),2 )
         
     def load_main_menu(self, dt):
         self.manager.current = 'mainMenu'
@@ -48,3 +52,6 @@ class LoginScreen(Screen):
 
     def remove_spaces(self, text_input):
         text_input.text = text_input.text.replace(' ', '').replace('\t', '')
+
+    def set_label(self,message):
+        self.ids.message_label.text = message

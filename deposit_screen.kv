@@ -3,17 +3,20 @@
         orientation: 'vertical'
         Button:
             text: 'Voltar'
+            font_size:50
             size_hint: .2, .1
             pos_hint: {'left': 1, 'top': 1}
-            on_press: root.manager.current = 'mainMenu'
+            on_press: root.load_screen()
         Label:
             id: balance
             text: 'Saldo: $0.00'
+            font_size:50
             size_hint: .2, .1
             pos_hint: {'center_x': 0.5, 'top': 1}    
         TextInput:
             id: deposit_input
             hint_text: 'Valor a depositar'
+            font_size:50
             multiline: False
             size_hint: .5, .1
             pos_hint: {'center_x': 0.5, 'top': 0.8}
@@ -23,15 +26,18 @@
         Label:
             id: future_balance
             text: 'Saldo futuro: $0.00'
+            font_size:50
             size_hint: 1, .2
             pos_hint: {'center_x': 0.5, 'top': 0.7}
         Button:
             text: 'Confirmar'
+            font_size:50
             size_hint: .3, .1
             pos_hint: {'center_x': 0.5, 'top': 0.5}
             on_press: root.print_message_change_screen(root)
         Label:
             id: message_label
             text: ' '
+            font_size:50
             size_hint: 1, .1
             pos_hint: {'center_x': 0.5, 'bottom': 1}

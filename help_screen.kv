@@ -4,7 +4,7 @@
 
         Label:
             text: 'Instruções de compra'
-            font_size: 35
+            font_size: 50
             size_hint: .33,.1
             halign: 'center'
             pos_hint: {'center_x':0.5,'top': 1}
@@ -12,21 +12,18 @@
 
         TextInput:
             text:
-                '\n\n1- Deposite créditos clicando sobre o saldo ou no canto inferior esquerdo\n' \
-                'no menu principal.\n\n\n\n\n' \
-                '2- Selecione os produtos desejados, clicando sobre eles, escolhendo as\n' \
-                'quantidade e adicionando ao carrinho no menu principal.\n\n\n\n\n' \
-                '3- Vá para o carrinho, clicando no canto inferior central.\n\n\n\n\n' \
-                '4- Confira os itens e confirme a compra.\n\n\n\n\n' \
-                '5- Vá até a máquina de vendas e resgate seu produto e o comprovante.'
-            font_size: 35
-            size_hint: 1,.8
+                '\n\n1- Deposite créditos clicando sobre o saldo ou sobre o botão "Depositar" no menu principal.\n\n\n\n\n' \
+                '2- Vizualize os produtos e seu respectivo estoque.\n\n\n\n\n' \
+                '3- Vá até a máquina de vendas e adquira o(s) produto(s) desejado(s).'
+            font_size: 50
+            size_hint: 1,.9
             pos_hint: {'center_x':0.5,'top': 0.9}
             mutiline: True
             readonly: True
 
         Button:
             text: 'Voltar'
+            font_size:50
             on_press: root.back('mainMenu')
             size_hint: 0.15,0.1
             pos_hint: {'left':1 , 'top':1}

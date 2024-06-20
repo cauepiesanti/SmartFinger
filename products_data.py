@@ -19,7 +19,13 @@ products = [
         'name': '',
         'price': 0,
         'stock': 0
+    },
+    {
+        'name': '',
+        'price': 0,
+        'stock': 0
     }
+
 ]
 
 def update_products_data():

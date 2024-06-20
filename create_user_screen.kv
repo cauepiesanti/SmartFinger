@@ -3,27 +3,34 @@
         orientation: 'vertical'
         
         Label:
-            text: 'Criar Usuário' 
+            text: 'Criar Usuário'
+            font_size:50
 
         TextInput:
             id: userName_input
             hint_text: 'Usuário'
+            font_size:50
             multiline: False
             on_text: root.remove_spaces(self)
         
         TextInput:
             id: password_input
             hint_text: 'Senha'
+            font_size:50
+            password: True
             multiline: False
             on_text: root.remove_spaces(self)
 
         Button:
             text: 'Voltar'
+            font_size:50
             on_press: root.back(root)
         
         Button:
             text: 'Confirmar cadastro'
+            font_size:50
             on_press: root.returnLogin(root)
     
         Label:
             id: message
+            font_size:50

@@ -17,7 +17,11 @@ class DepositScreen(Screen):
 
     def update_future_balance(self, instance, value):
         try:
-            deposit_amount = float(value.replace(',', '.'))
+            deposit_amount = (value.replace(',', '.'))
+            if (deposit_amount == ''):
+                deposit_amount = float(0)
+            else:
+                deposit_amount = float(deposit_amount)
             future_balance = user_data.get_current_user_balance() + deposit_amount
             self.ids.future_balance.text = f'Saldo futuro: ${future_balance:.2f}'
         except ValueError:
@@ -46,17 +50,25 @@ class DepositScreen(Screen):
                     self.ids.future_balance.text = f'Saldo futuro: ${future_balance:.2f}'
                     self.ids.message_label.text = 'Depósito bem-sucedido!'
                     
-                    Clock.schedule_once(self.load_screen, 1)
+                    Clock.schedule_once(lambda dt: self.load_screen(), 1)
+
                 else:
                     self.ids.message_label.text = 'Valor de depósito deve estar entre $0.01 e $1000.00'
+                    Clock.schedule_once(lambda dt: self.set_message(''),2)
             except ValueError:
                 self.ids.message_label.text = 'Valor de depósito inválido'
+                Clock.schedule_once(lambda dt: self.set_message(''),2)
         else:
-            self.ids.message_label.text = 'Por favor, insira um valor de depósito válido'
+            self.set_message('Por favor, insira um valor de depósito válido')
+            Clock.schedule_once(lambda dt: self.set_message(''),2)
+        
+        self.ids.deposit_input.text = ''
+        self.ids.future_balance.text = f'Saldo futuro: ${user_data.get_current_user_balance():.2f}'
 
-    def load_screen(self, dt):
+    def load_screen(self):
         self.manager.current = 'mainMenu'
         self.ids.message_label.text = ''
+        self.ids.deposit_input.text = ''
 
     def update_balance_db(self, username, new_balance):
         try:
@@ -69,3 +81,6 @@ class DepositScreen(Screen):
                 print(f'Erro ao atualizar saldo no banco de dados. Status code: {response.status_code}')
         except Exception as e:
             print(f'Erro ao conectar ao servidor: {e}')
+    
+    def set_message(self,message):
+        self.ids.message_label.text = message

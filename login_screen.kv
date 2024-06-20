@@ -4,15 +4,18 @@
 
         Label:
             text: "Login"
+            font_size:50
         
         TextInput:
             id: username_input
             hint_text: 'Usuário'
+            font_size:50
             multiline: False
             on_text: root.remove_spaces(self)
         
         TextInput:
             id: password_input
+            font_size:50
             hint_text: 'Senha'
             multiline: False
             password: True
@@ -20,11 +23,14 @@
         
         Button:
             text: 'Login'
+            font_size:50
             on_press: root.login(root)
         
         Button:
             text: 'Cadastrar-se'
+            font_size:50
             on_press: root.signup(root)
         
         Label:
             id: message_label
+            font_size:50
