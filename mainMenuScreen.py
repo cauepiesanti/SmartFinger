@@ -8,10 +8,15 @@ Builder.load_file('main_menu_screen.kv')
 
 class MainMenuScreen(Screen):   
 
+    def __init__(self,**kwargs):
+        super().__init__(**kwargs)
+        Clock.schedule_interval(self.update_table,5)
+
+
     def on_enter(self):
         self.init_balance()
         self.init_table()
-        Clock.schedule_interval(self.update_table,5)   
+        #Clock.schedule_interval(self.update_table,5)   
 
     def init_table(self):
         self.ids.nome_produto_1.text = products_data.get_product_name(0)
@@ -65,5 +70,9 @@ class MainMenuScreen(Screen):
         self.ids.balance_button.text = f'Saldo: ${new_balance:.2f}'
 
     def init_balance(self):
+        balance = user_data.get_current_user_balance()
+        self.ids.balance_button.text = f'Saldo: ${balance:.2f}'
+
+    def update_balance(self,dt):
         balance = user_data.get_current_user_balance()
         self.ids.balance_button.text = f'Saldo: ${balance:.2f}'
